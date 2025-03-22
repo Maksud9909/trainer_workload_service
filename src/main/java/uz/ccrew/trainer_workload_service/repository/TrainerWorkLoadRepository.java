@@ -15,4 +15,6 @@ public interface TrainerWorkLoadRepository extends JpaRepository<TrainerWorkload
 
     @Query("SELECT t FROM TrainerWorkload t WHERE t.trainerUsername = :username AND t.trainingDate = :date ORDER BY t.id DESC")
     Optional<TrainerWorkload> findLatestByTrainerUsernameAndTrainingDate(@Param("username") String username, @Param("date") LocalDate date);
+
+    void deleteByTrainerUsernameAndTrainingDate(String trainerUsername, LocalDate trainingDate);
 }

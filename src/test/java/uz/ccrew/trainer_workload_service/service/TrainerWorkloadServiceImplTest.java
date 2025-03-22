@@ -71,13 +71,9 @@ class TrainerWorkloadServiceImplTest {
     @Test
     void processTraining_ShouldDeleteWorkload_WhenActionTypeIsDelete() {
         workloadDTO.setActionType(DELETE);
-        when(trainerWorkLoadRepository.findLatestByTrainerUsernameAndTrainingDate(
-                workloadDTO.getTrainerUsername(), workloadDTO.getTrainingDate()))
-                .thenReturn(Optional.of(workload));
-
         trainerWorkloadService.processTraining(workloadDTO);
 
-        // Проверяем, что объект удалён
-        verify(trainerWorkLoadRepository, times(1)).delete(workload);
+        verify(trainerWorkLoadRepository, times(1))
+                .deleteByTrainerUsernameAndTrainingDate(workloadDTO.getTrainerUsername(), workloadDTO.getTrainingDate());
     }
 }
