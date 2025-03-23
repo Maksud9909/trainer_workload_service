@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>uz.ccrew</groupId>
-    <artifactId>trainer_workload_service</artifactId>
+    <artifactId>trainerworkloadservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>trainer_workload_service</name>
     <description>trainer_workload_service</description>
