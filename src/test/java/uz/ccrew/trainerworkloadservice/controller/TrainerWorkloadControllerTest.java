@@ -13,6 +13,7 @@ import uz.ccrew.trainerworkloadservice.enums.ActionType;
 import uz.ccrew.trainerworkloadservice.service.impl.TrainerWorkloadServiceImpl;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +35,7 @@ class TrainerWorkloadControllerTest {
                 .trainerUsername("testTrainer")
                 .trainerFirstName("John")
                 .trainerLastName("Doe")
-                .trainingDate(LocalDate.of(2025, 3, 21))
+                .trainingDate(LocalDateTime.of(2025, 3, 21, 1, 1))
                 .trainingDuration(2.0)
                 .actionType(ActionType.ADD)
                 .isActive(true)

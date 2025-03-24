@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.mockito.Mockito.*;
 
@@ -16,7 +17,7 @@ class TrainerWorkLoadRepositoryTest {
     private TrainerWorkLoadRepository trainerWorkLoadRepository;
 
     private final String TRAINER_USERNAME = "testTrainer";
-    private final LocalDate TRAINING_DATE = LocalDate.of(2025, 3, 21);
+    private final LocalDateTime TRAINING_DATE = LocalDateTime.of(2025, 3, 21, 1, 1);
 
     @Test
     void findLatestByTrainerUsernameAndTrainingDate_ShouldReturnWorkload() {

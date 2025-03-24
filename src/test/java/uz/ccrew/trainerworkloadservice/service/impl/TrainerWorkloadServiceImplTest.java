@@ -16,6 +16,7 @@ import uz.ccrew.trainerworkloadservice.exp.ObjectNotProvidedException;
 import uz.ccrew.trainerworkloadservice.repository.TrainerWorkLoadRepository;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.*;
@@ -43,7 +44,7 @@ class TrainerWorkloadServiceImplTest {
                 .trainerUsername("testTrainer")
                 .trainerFirstName("John")
                 .trainerLastName("Doe")
-                .trainingDate(LocalDate.of(2025, 3, 21))
+                .trainingDate(LocalDateTime.of(2025, 3, 21, 1, 1))
                 .trainingDuration(2.0)
                 .actionType(ADD)
                 .isActive(true)
