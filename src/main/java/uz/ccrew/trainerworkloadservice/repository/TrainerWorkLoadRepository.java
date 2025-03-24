@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.time.LocalDate;
 
@@ -31,5 +32,5 @@ public interface TrainerWorkLoadRepository extends JpaRepository<TrainerWorkload
     List<TrainerMonthlySummaryProjection> getMonthlySummary(@Param("username") String username);
 
 
-    void deleteByTrainerUsernameAndTrainingDate(String trainerUsername, LocalDate trainingDate);
+    void deleteByTrainerUsernameAndTrainingDate(String trainerUsername, LocalDateTime trainingDate);
 }

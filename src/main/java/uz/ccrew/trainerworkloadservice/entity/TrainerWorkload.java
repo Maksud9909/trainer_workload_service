@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -21,6 +22,6 @@ public class TrainerWorkload extends BaseEntity {
     private String trainerLastName;
     @Column(name = "is_active")
     private boolean isActive;
-    private LocalDate trainingDate;
+    private LocalDateTime trainingDate;
     private Double trainingDuration;
 }

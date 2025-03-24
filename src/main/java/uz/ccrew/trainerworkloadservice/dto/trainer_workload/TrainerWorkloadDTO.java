@@ -4,6 +4,7 @@ import lombok.*;
 import uz.ccrew.trainerworkloadservice.enums.ActionType;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 @Getter
@@ -15,7 +16,7 @@ public class TrainerWorkloadDTO {
     private String trainerFirstName;
     private String trainerLastName;
     private boolean isActive;
-    private LocalDate trainingDate;
+    private LocalDateTime trainingDate;
     private Double trainingDuration;
     private ActionType actionType;
 }
