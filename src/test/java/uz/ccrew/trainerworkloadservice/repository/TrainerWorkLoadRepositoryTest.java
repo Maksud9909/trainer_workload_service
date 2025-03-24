@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
+
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -22,5 +23,11 @@ class TrainerWorkLoadRepositoryTest {
         trainerWorkLoadRepository.deleteByTrainerUsernameAndTrainingDate(TRAINER_USERNAME, TRAINING_DATE);
         verify(trainerWorkLoadRepository, times(1))
                 .deleteByTrainerUsernameAndTrainingDate(TRAINER_USERNAME, TRAINING_DATE);
+    }
+
+    @Test
+    void getMonthlySummary() {
+        trainerWorkLoadRepository.getMonthlySummary(TRAINER_USERNAME);
+        verify(trainerWorkLoadRepository, times(1)).getMonthlySummary(TRAINER_USERNAME);
     }
 }

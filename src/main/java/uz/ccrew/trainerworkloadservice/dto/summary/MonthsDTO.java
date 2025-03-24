@@ -11,6 +11,7 @@ import java.time.Month;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class MonthsDTO {
     private Month month;
     private double totalDuration;

@@ -40,7 +40,7 @@ class TrainerWorkloadControllerTest {
                 .isActive(true)
                 .build();
 
-        ResponseEntity<String> response = trainerWorkloadController.handleTraining(workloadDTO);
+        ResponseEntity<String> response = trainerWorkloadController.processTraining(workloadDTO);
 
         verify(trainerWorkloadService, times(1)).processTraining(workloadDTO);
 
