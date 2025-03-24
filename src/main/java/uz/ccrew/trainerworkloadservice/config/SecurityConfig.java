@@ -19,7 +19,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions(frame -> frame.disable()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/h2-console/**", "/api/v1/trainings/workload/**").permitAll()
+                        .requestMatchers("/h2-console/**", "/api/v1/trainers/**").permitAll()
                         .anyRequest().authenticated());
         return http.build();
     }

@@ -1,18 +1,17 @@
 package uz.ccrew.trainerworkloadservice.dto.summary;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
+
+import java.time.Month;
 
 
 @Getter
 @Setter
-@SuperBuilder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class MonthsDTO {
-    private String month;
+    private Month month;
     private double totalDuration;
 }
