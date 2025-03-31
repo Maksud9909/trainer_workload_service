@@ -12,7 +12,6 @@ import uz.ccrew.trainerworkloadservice.dto.trainer_workload.TrainerWorkloadDTO;
 import uz.ccrew.trainerworkloadservice.enums.ActionType;
 import uz.ccrew.trainerworkloadservice.service.impl.TrainerWorkloadServiceImpl;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

@@ -17,6 +17,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  activemq:
+    user: test
+    password: test
 
 eureka:
   client:
