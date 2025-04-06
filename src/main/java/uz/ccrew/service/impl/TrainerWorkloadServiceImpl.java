@@ -1,10 +1,7 @@
 package uz.ccrew.service.impl;
 
-import jakarta.jms.Destination;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.support.JmsHeaders;
-import org.springframework.messaging.Message;
 import uz.ccrew.dto.summary.MonthsDTO;
 import uz.ccrew.dto.summary.TrainerMonthlySummaryDTO;
 import uz.ccrew.dto.summary.YearsDTO;
@@ -29,7 +26,6 @@ import java.time.Month;
 @RequiredArgsConstructor
 public class TrainerWorkloadServiceImpl implements TrainerWorkloadService {
     private final TrainerWorkLoadRepository trainerWorkLoadRepository;
-    private final JmsTemplate jmsTemplate;
 
     @Override
     @Transactional
@@ -55,23 +51,6 @@ public class TrainerWorkloadServiceImpl implements TrainerWorkloadService {
             log.info("Deleted the trainer workload for {} on {}", dto.getTrainerUsername(), dto.getTrainingDate());
         }
     }
-
-    @JmsListener(destination = "trainer.workload.request")
-    public void handleMonthlyWorkloadRequest(Message<String> message) {
-        log.info("Received headers: {}", message.getHeaders());
-        String username = message.getPayload();
-        List<TrainerMonthlySummaryDTO> workload = getMonthlyWorkload(username);
-
-        Destination replyTo = message.getHeaders().get(JmsHeaders.REPLY_TO, Destination.class);
-        if (replyTo == null) {
-            log.error("No reply destination specified for username: {}", username);
-            return;
-        }
-
-        jmsTemplate.convertAndSend(replyTo, workload);
-        log.info("Sent monthly workload reply for username: {}", username);
-    }
-
 
     @Override
     @Transactional(readOnly = true)
