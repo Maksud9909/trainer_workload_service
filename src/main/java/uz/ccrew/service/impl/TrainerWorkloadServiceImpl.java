@@ -1,7 +1,6 @@
 package uz.ccrew.service.impl;
 
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.jms.core.JmsTemplate;
 import uz.ccrew.dto.summary.MonthsDTO;
 import uz.ccrew.dto.summary.TrainerMonthlySummaryDTO;
 import uz.ccrew.dto.summary.YearsDTO;
